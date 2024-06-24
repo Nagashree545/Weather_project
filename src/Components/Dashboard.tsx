@@ -16,6 +16,7 @@ const Dashboard: React.FC<{}> = (() => {
     const weatherData = useSelector((state: any) => state.weather.weatherData);
     const [city, setCity] = useState('');
     const foreCastData = useSelector((state: any) => state.weather.forcastData);
+    const SingleData = useSelector((state: any) => state.weather.forcastData);
 
     const handleThemeSwitch = () => {
         setIsLightTheme(!isLightTheme);
@@ -88,7 +89,7 @@ const Dashboard: React.FC<{}> = (() => {
 
                             </Row>
                             <WeatherCard />
-                            <WeatherCardTwo foreCastData={foreCastData && foreCastData.list}/>
+                            <WeatherCardTwo foreCastData={foreCastData && foreCastData.list} length={1} singleDayData={SingleData} slice={undefined}/>
                         </Col>
                     </Row>
                 </div>

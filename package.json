@@ -49,6 +49,7 @@
     ]
   },
   "devDependencies": {
-    "@types/redux-thunk": "^2.1.0"
+    "@types/redux-thunk": "^2.1.0",
+    "gh-pages": "^6.1.1"
   }
 }

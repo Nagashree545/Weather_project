@@ -8,24 +8,14 @@ import mist from "../Assets/mist.png";
 import sunny from "../Assets/sunny.png";
 import navigation from "../Assets/navigation 1.png";
 
-const WeatherCardTwo: React.FC<{ foreCastData: any }> = React.memo((foreCastData) => {
-    console.log(foreCastData && foreCastData)
-    const renderWeatherIcon = (weatherType: string) => {
-        switch (weatherType) {
-            case 'Clouds':
-                return <img src={clouds} alt="Clouds" />;
-            case 'Rain':
-                return <img src={rain} alt="Rain" />;
-            case 'Drizzle':
-                return <img src={drizzle} alt="Drizzle" />;
-            case 'Mist':
-                return <img src={mist} alt="Mist" />;
-            case 'Clear':
-                return <img src={sunny} alt="Clear" />;
-            default:
-                return null;
-        }
-    };
+const WeatherCardTwo: React.FC<{
+    slice: any;
+    length: number;
+    foreCastData: any
+    singleDayData: any
+}> = React.memo((foreCastData) => {
+    const singleDayForecast = foreCastData && foreCastData.foreCastData && foreCastData.foreCastData.length > 0 ? foreCastData && foreCastData.foreCastData && foreCastData.foreCastData?.slice(0, 5) : [];
+
     const formatDate = (timestamp: number) => {
         const date = new Date(timestamp * 1000);
         const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -36,50 +26,30 @@ const WeatherCardTwo: React.FC<{ foreCastData: any }> = React.memo((foreCastData
     };
     const formatTime = (timestamp: number) => {
         const date = new Date(timestamp * 1000);
-        const hours = date.getHours().toString().padStart(2, '0'); // Get hours and pad with leading zero if needed
-        const minutes = date.getMinutes().toString().padStart(2, '0'); // Get minutes and pad with leading zero if needed
+        const hours = date.getHours().toString().padStart(2, '0');
+        const minutes = date.getMinutes().toString().padStart(2, '0');
         return `${hours}:${minutes}`;
     };
-
+    console.log(singleDayForecast && singleDayForecast)
     return (
         <>
             <Row gutter={[24, 24]}>
-                {/* <Col lg={7} xl={6}  className={weather["weather-card--three"]}>
-                    <h3>5 Days Forecast:</h3>
-                 
-                    <div className={weather["card--three--row"]}>
-                        <img src={clouds} />
-                        <p>20°C</p>
-                        <p>Friday, 1 Sep</p>
-                    </div>
-                    <div className={weather["card--three--row"]}>
-                        <img src={mist} />
-                        <p>20°C</p>
-                        <p>Friday, 1 Sep</p>
-                    </div>
-                    <div className={weather["card--three--row"]}>
-                        <img src={sunny} />
-                        <p>20°C</p>
-                        <p>Friday, 1 Sep</p>
-                    </div>
-                    <div className={weather["card--three--row"]}>
-                        <img src={drizzle} />
-                        <p>20°C</p>
-                        <p>Friday, 1 Sep</p>
-                    </div>
-                    <div className={weather["card--three--row"]}>
-                        <img src={rain} />
-                        <p>20°C</p>
-                        <p>Friday, 1 Sep</p>
-                    </div>
-                </Col> */}
+
                 <Col lg={7} xl={6} className={weather["weather-card--three"]}>
                     <h3>5 Days Forecast:</h3>
-                    {foreCastData && foreCastData.foreCastData && foreCastData.foreCastData?.map((forecast: any, index: any) => (
+                    {singleDayForecast?.map((singledata: any, index: number) => (
                         <div key={index} className={weather["card--three--row"]}>
-                            {renderWeatherIcon(forecast.weather[0].main)}
-                            <p>{forecast.main.temp}°C</p>
-                            <p>{formatDate(forecast.dt)}</p>
+                            <>
+                                <img src={singledata?.weather[0]?.main === "Clouds" ? clouds :
+                                    singledata?.weather[0]?.main === "Rain" ? rain :
+                                        singledata?.weather[0]?.main === "Sunny" ?
+                                            sunny : singledata?.weather[0]?.main === "Mist" ? mist :
+                                                singledata?.weather[0]?.main === "Drizzle" ? drizzle :
+                                                    sunny} alt="sunny" />
+                                <p>{singledata.main.temp}°C</p>
+                                <p>{formatDate(singledata.dt)}</p>
+                            </>
+
                         </div>
                     ))}
                 </Col>
@@ -104,7 +74,7 @@ const WeatherCardTwo: React.FC<{ foreCastData: any }> = React.memo((foreCastData
                         </div>
                     </div>
                 </Col>
-            </Row>
+            </Row >
         </>
     )
 })
