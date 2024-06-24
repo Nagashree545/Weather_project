@@ -40,7 +40,7 @@ const Dashboard: React.FC<{}> = (() => {
                                 <Card className={`${styles["cards"]}
                                  ${isLightTheme ? styles["light-theme"] : styles["dark-theme"]}`}>
                                     <div>
-                                        <img src={logo} className={styles["logo"]} />
+                                        <img src={logo} alt='image' className={styles["logo"]} />
                                         <h3>
                                             <HomeOutlined />
                                             <span>Dashboard</span>

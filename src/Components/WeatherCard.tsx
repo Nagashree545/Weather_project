@@ -88,11 +88,11 @@ const WeatherCard: React.FC<{}> = React.memo(() => {
                         <Col style={{ textAlign: "center" }} xs={24} sm={12} xl={6} xxl={7}>
                             <div className={weatherstyle["sun--icon"]}>
                                 <img src={weatherData?.weather[0]?.main === "Clouds" ? clouds :
-                                 weatherData?.weather[0]?.main === "Rain" ? rain :
-                                 weatherData?.weather[0]?.main === "Sunny" ?
-                                     sunny:weatherData?.weather[0]?.main === "Mist" ? mist:
-                                     weatherData?.weather[0]?.main === "Drizzle" ? drizzle:
-                                     sunny } className={weatherstyle["sunny--iconn-two"]} />
+                                    weatherData?.weather[0]?.main === "Rain" ? rain :
+                                        weatherData?.weather[0]?.main === "Sunny" ?
+                                            sunny : weatherData?.weather[0]?.main === "Mist" ? mist :
+                                                weatherData?.weather[0]?.main === "Drizzle" ? drizzle :
+                                                    sunny} className={weatherstyle["sunny--iconn-two"]} alt='image'/>
                                 <p className={weatherstyle["feel--temp"]} >{weatherData?.weather[0]?.main}</p>
                             </div></Col>
                         <Col xs={24} xl={9} xxl={9}><Row gutter={[24, 24]} justify={"center"} className={weatherstyle["humidity--row"]}>
