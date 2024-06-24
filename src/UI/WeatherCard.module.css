@@ -189,7 +189,10 @@
         height: 310px;
         margin: 5px;
     }
-
+    .card--time--one {
+        font-size: 60px;
+        line-height: 0px;
+    }
     .weather--card--two {
         width: 95%;
         height: auto;
@@ -338,7 +341,10 @@
         margin: 5px;
         justify-content: center;
     }
-
+    .card--time--one {
+        font-size: 60px;
+        line-height: 0px;
+    }
     .weather--card--two {
         width: 95%;
         height: 420px;
@@ -379,7 +385,11 @@
         margin: 5px;
         justify-content: center;
     }
-
+    .card--time--one {
+flex-wrap: wrap;    
+    line-height: 0px;
+    font-size: 70px;
+    }
     .weather--card--two {
         width: 95%;
         height: 310px;

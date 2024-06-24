@@ -1,5 +1,4 @@
 {
-  "homepage": "https://Nagashree545.github.io/weather_project",
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
@@ -27,9 +26,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "build": "CI=false react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -54,7 +51,6 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/plugin-transform-private-property-in-object": "^7.24.7",
-    "@types/redux-thunk": "^2.1.0",
-    "gh-pages": "^6.1.1"
+    "@types/redux-thunk": "^2.1.0"
   }
 }
