@@ -39,14 +39,12 @@
 }
 
 .dark-theme .card--two--icons {
-
-    fill: var(--light--text-color);
+ fill: var(--light--text-color);
 }
 
 .sunny--iconn-two {
     width: 200px;
     height: 200px;
-
 
 }
 
@@ -108,9 +106,7 @@
     display: flex;
     flex-direction: row;
     text-align: center;
-
     justify-content: space-evenly;
-    /* padding: 5px; */
 
 }
 
@@ -208,10 +204,6 @@
         flex-direction: row;
         justify-content: space-evenly;
     }
-
-    /* .sun--icon {
-        display: flex;
-    } */
 
     .feel--temp {
         align-content: center;

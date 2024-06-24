@@ -14,23 +14,16 @@ const WeatherCardTwo: React.FC<{
     foreCastData: any
     singleDayData: any
 }> = React.memo((foreCastData) => {
-    const singleDayForecast = foreCastData && foreCastData.length > 0 ? foreCastData && foreCastData.foreCastData?.slice(0, 20) : [];
 
-    const formatDate = (timestamp: number) => {
-        const date = new Date(timestamp * 1000);
-        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-        const dayOfWeek = days[date.getDay()];
-        const month = date.toLocaleString('en-US', { month: 'short' });
-        const dayOfMonth = date.getDate();
-        return `${dayOfWeek}, ${dayOfMonth} ${month}`;
-    };
+    const singleDayForecast = foreCastData && foreCastData.length
+        > 0 ? foreCastData && foreCastData.foreCastData?.slice(0, 20) : [];
+
     const formatTime = (timestamp: number) => {
         const date = new Date(timestamp * 1000);
         const hours = date.getHours().toString().padStart(2, '0');
         const minutes = date.getMinutes().toString().padStart(2, '0');
         return `${hours}:${minutes}`;
     };
-    console.log(singleDayForecast && singleDayForecast)
     return (
         <>
             <Row gutter={[24, 24]}>
@@ -46,8 +39,8 @@ const WeatherCardTwo: React.FC<{
                                             sunny : singledata?.weather[0]?.main === "Mist" ? mist :
                                                 singledata?.weather[0]?.main === "Drizzle" ? drizzle :
                                                     sunny} alt="sunny" />
-                                <p>{singledata.main.temp}°C</p>
-                                <p>{singledata.
+                                <p>{singledata?.main?.temp}°C</p>
+                                <p>{singledata?.
                                     dt_txt}</p>
                             </>
 

@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import weatherstyle from "../UI/WeatherCard.module.css";
 import { Col, Row } from 'antd';
-import {  WiSunrise, WiSunset } from 'react-icons/wi';
-import { HumidityIcon, PressureIcon,  UVIcon, WindSpeed } from './icons';
+import { WiSunrise, WiSunset } from 'react-icons/wi';
+import { HumidityIcon, PressureIcon, UVIcon, WindSpeed } from './icons';
 import sunny from "../Assets/clear 1.png";
 import clouds from "../Assets/clouds.png";
 import rain from "../Assets/rain.png";
@@ -91,7 +91,7 @@ const WeatherCard: React.FC<{}> = React.memo(() => {
                                         weatherData?.weather[0]?.main === "Sunny" ?
                                             sunny : weatherData?.weather[0]?.main === "Mist" ? mist :
                                                 weatherData?.weather[0]?.main === "Drizzle" ? drizzle :
-                                                    sunny} className={weatherstyle["sunny--iconn-two"]} alt='sunny'/>
+                                                    sunny} className={weatherstyle["sunny--iconn-two"]} alt='sunny' />
                                 <p className={weatherstyle["feel--temp"]} >{weatherData?.weather[0]?.main}</p>
                             </div></Col>
                         <Col xs={24} xl={9} xxl={9}><Row gutter={[24, 24]} justify={"center"} className={weatherstyle["humidity--row"]}>
@@ -121,7 +121,6 @@ const WeatherCard: React.FC<{}> = React.memo(() => {
                     </Row>
                 </Col>
             </Row >
-            {/* <WeatherCardTwo /> */}
         </>
 
 
