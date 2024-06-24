@@ -21,18 +21,6 @@ code {
   --light--icon-color: #ffffff8e;
 }
 
-/* .light-theme {
-  --background-color: #ffffff8e;
-  --text-color: #000000;
-  --icon-color: #000000;
-}
-
-.dark-theme {
-  --background-color: #121212;
-  --text-color: #ffffff;
-  --icon-color: #ffffff;
-} */
-
 .ant-switch.ant-switch-checked {
   background-color: rgb(153, 145, 145) !important;
 }

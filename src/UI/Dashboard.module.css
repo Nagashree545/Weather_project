@@ -140,6 +140,7 @@
 .location--btn {
     background-color: #65a15a;
     padding: 25px 20px;
+    width: 150px;
     border-radius: 30px;
     font-size: 18px;
     color: #fff;

@@ -60,7 +60,7 @@ const WeatherCard: React.FC<{}> = React.memo(() => {
                 <Col xs={24} lg={15} xl={15}  >
 
                     <Row className={weatherstyle["weather--card--two"]}>
-                        <Col xs={24} sm={12} xl={6} xxl={5}>
+                        <Col xs={24} sm={12} xl={6} xxl={6}>
                             <div>
                                 <h2 className={weatherstyle["temperature"]}>{weatherData?.main?.temp}°C</h2>
                                 <p className={weatherstyle["feel--temp"]}>Feels like: {weatherData?.main?.feels_like}°C</p>
@@ -84,7 +84,7 @@ const WeatherCard: React.FC<{}> = React.memo(() => {
                                 </div>
                             </div>
                         </Col>
-                        <Col style={{ textAlign: "center" }} xs={24} sm={12} xl={6} xxl={7}>
+                        <Col style={{ textAlign: "center" }} xs={24} sm={12} xl={7} xxl={7}>
                             <div className={weatherstyle["sun--icon"]}>
                                 <img src={weatherData?.weather[0]?.main === "Clouds" ? clouds :
                                     weatherData?.weather[0]?.main === "Rain" ? rain :

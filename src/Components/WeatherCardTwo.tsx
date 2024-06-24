@@ -1,4 +1,4 @@
-import {  Col, Row } from "antd";
+import { Carousel, Col, Row } from "antd";
 import React from "react"
 import weather from "../UI/WeatherCard.module.css";
 import clouds from "../Assets/clouds.png";
@@ -14,7 +14,7 @@ const WeatherCardTwo: React.FC<{
     foreCastData: any
     singleDayData: any
 }> = React.memo((foreCastData) => {
-    const singleDayForecast = foreCastData && foreCastData.foreCastData && foreCastData.foreCastData.length > 0 ? foreCastData && foreCastData.foreCastData && foreCastData.foreCastData?.slice(0, 5) : [];
+    const singleDayForecast = foreCastData && foreCastData.length > 0 ? foreCastData && foreCastData.foreCastData?.slice(0, 20) : [];
 
     const formatDate = (timestamp: number) => {
         const date = new Date(timestamp * 1000);
@@ -30,12 +30,13 @@ const WeatherCardTwo: React.FC<{
         const minutes = date.getMinutes().toString().padStart(2, '0');
         return `${hours}:${minutes}`;
     };
+    console.log(singleDayForecast && singleDayForecast)
     return (
         <>
             <Row gutter={[24, 24]}>
 
                 <Col lg={7} xl={6} className={weather["weather-card--three"]}>
-                    <h3>5 Days Forecast:</h3>
+                    <h3>4 Days Forecast:</h3>
                     {singleDayForecast?.map((singledata: any, index: number) => (
                         <div key={index} className={weather["card--three--row"]}>
                             <>
@@ -46,7 +47,8 @@ const WeatherCardTwo: React.FC<{
                                                 singledata?.weather[0]?.main === "Drizzle" ? drizzle :
                                                     sunny} alt="sunny" />
                                 <p>{singledata.main.temp}°C</p>
-                                <p>{formatDate(singledata.dt)}</p>
+                                <p>{singledata.
+                                    dt_txt}</p>
                             </>
 
                         </div>
