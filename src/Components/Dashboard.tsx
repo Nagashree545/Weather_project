@@ -12,7 +12,7 @@ import WeatherCardTwo from './WeatherCardTwo';
 
 const Dashboard: React.FC<{}> = (() => {
     const [isLightTheme, setIsLightTheme] = useState(false);
-    const { WeatherHandler , ForecastHandler } = useWeatherContent();
+    const { WeatherHandler, ForecastHandler } = useWeatherContent();
     const weatherData = useSelector((state: any) => state.weather.weatherData);
     const [city, setCity] = useState('');
     const foreCastData = useSelector((state: any) => state.weather.forcastData);
@@ -25,7 +25,7 @@ const Dashboard: React.FC<{}> = (() => {
         WeatherHandler("bangalore");
         ForecastHandler("bangalore")
     }, []);
-    const handleSearch = (val:any) => {
+    const handleSearch = (val: any) => {
         WeatherHandler(city);
         ForecastHandler(city)
     };
@@ -89,7 +89,7 @@ const Dashboard: React.FC<{}> = (() => {
 
                             </Row>
                             <WeatherCard />
-                            <WeatherCardTwo foreCastData={foreCastData && foreCastData.list} length={1} singleDayData={SingleData} slice={undefined}/>
+                            <WeatherCardTwo foreCastData={foreCastData && foreCastData.list} length={1} singleDayData={SingleData && SingleData.list[1]} slice={undefined} />
                         </Col>
                     </Row>
                 </div>

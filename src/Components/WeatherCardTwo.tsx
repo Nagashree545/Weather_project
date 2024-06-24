@@ -30,14 +30,13 @@ const WeatherCardTwo: React.FC<{
         const minutes = date.getMinutes().toString().padStart(2, '0');
         return `${hours}:${minutes}`;
     };
-    console.log(singleDayForecast && singleDayForecast)
     return (
         <>
             <Row gutter={[24, 24]}>
 
                 <Col lg={7} xl={6} className={weather["weather-card--three"]}>
                     <h3>5 Days Forecast:</h3>
-                    { singleDayForecast?.map((singledata: any, index: number) => (
+                    {singleDayForecast?.map((singledata: any, index: number) => (
                         <div key={index} className={weather["card--three--row"]}>
                             <>
                                 <img src={singledata?.weather[0]?.main === "Clouds" ? clouds :
