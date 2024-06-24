@@ -1,19 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import styles from "../UI/Dashboard.module.css"
 import { Button, Card, Col, Input, Row, Switch } from 'antd';
-import { DirectionIcon } from './icons';
 import WeatherCard from './WeatherCard';
 import logo from "../Assets/logo.jpg";
-import { AreaChartOutlined, BellOutlined, HeartOutlined, HomeOutlined, LoginOutlined, TranslationOutlined } from '@ant-design/icons';
+import { AreaChartOutlined, BellOutlined, HeartOutlined, HomeOutlined, LoginOutlined } from '@ant-design/icons';
 import { useWeatherContent } from '../weatheractions';
 import { useSelector } from 'react-redux';
-import sky from "../Assets/sky.jpg"
 import WeatherCardTwo from './WeatherCardTwo';
 
 const Dashboard: React.FC<{}> = (() => {
     const [isLightTheme, setIsLightTheme] = useState(false);
     const { WeatherHandler, ForecastHandler } = useWeatherContent();
-    const weatherData = useSelector((state: any) => state.weather.weatherData);
     const [city, setCity] = useState('');
     const foreCastData = useSelector((state: any) => state.weather.forcastData);
     const SingleData = useSelector((state: any) => state.weather.forcastData);
@@ -24,7 +21,7 @@ const Dashboard: React.FC<{}> = (() => {
     useEffect(() => {
         WeatherHandler("bangalore");
         ForecastHandler("bangalore")
-    }, []);
+    }, [WeatherHandler, ForecastHandler]);
     const handleSearch = (val: any) => {
         WeatherHandler(city);
         ForecastHandler(city)
@@ -40,7 +37,7 @@ const Dashboard: React.FC<{}> = (() => {
                                 <Card className={`${styles["cards"]}
                                  ${isLightTheme ? styles["light-theme"] : styles["dark-theme"]}`}>
                                     <div>
-                                        <img src={logo} alt='image' className={styles["logo"]} />
+                                        <img src={logo} alt='logo' className={styles["logo"]} />
                                         <h3>
                                             <HomeOutlined />
                                             <span>Dashboard</span>

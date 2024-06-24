@@ -1,6 +1,5 @@
 
-import { fetchWeatherData } from '../src/apipath/api';
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import {  createSlice } from "@reduxjs/toolkit";
 
 
 

@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
 import weatherstyle from "../UI/WeatherCard.module.css";
 import { Col, Row } from 'antd';
-import { WiStrongWind, WiSunrise, WiSunset, WiBarometer, WiDaySunnyOvercast } from 'react-icons/wi';
-import { HumidityIcon, PressureIcon, SunIcon, UVIcon, WindSpeed } from './icons';
-import WeatherCardTwo from './WeatherCardTwo';
+import {  WiSunrise, WiSunset } from 'react-icons/wi';
+import { HumidityIcon, PressureIcon,  UVIcon, WindSpeed } from './icons';
 import sunny from "../Assets/clear 1.png";
 import clouds from "../Assets/clouds.png";
 import rain from "../Assets/rain.png";
@@ -44,7 +43,7 @@ const WeatherCard: React.FC<{}> = React.memo(() => {
     });
     useEffect(() => {
         WeatherHandler("bangalore");
-    }, []);
+    }, [WeatherHandler]);
     return (
         <>
             <Row gutter={[{ xs: 12, sm: 12, md: 12, xl: 24 }, 24]} justify={"space-between"}>
@@ -92,7 +91,7 @@ const WeatherCard: React.FC<{}> = React.memo(() => {
                                         weatherData?.weather[0]?.main === "Sunny" ?
                                             sunny : weatherData?.weather[0]?.main === "Mist" ? mist :
                                                 weatherData?.weather[0]?.main === "Drizzle" ? drizzle :
-                                                    sunny} className={weatherstyle["sunny--iconn-two"]} alt='image'/>
+                                                    sunny} className={weatherstyle["sunny--iconn-two"]} alt='sunny'/>
                                 <p className={weatherstyle["feel--temp"]} >{weatherData?.weather[0]?.main}</p>
                             </div></Col>
                         <Col xs={24} xl={9} xxl={9}><Row gutter={[24, 24]} justify={"center"} className={weatherstyle["humidity--row"]}>

@@ -1,4 +1,4 @@
-import { Carousel, Col, Row } from "antd";
+import {  Col, Row } from "antd";
 import React from "react"
 import weather from "../UI/WeatherCard.module.css";
 import clouds from "../Assets/clouds.png";
