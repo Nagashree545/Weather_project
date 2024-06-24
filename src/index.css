@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+:root {
+  --dark--background-color: #3b3b39;
+  --light--background-color: #998f8f8e;
+  --dark--text-color: #fff;
+  --light--text-color: #000;
+  --dark--icon-color: #323230;
+  --light--icon-color: #ffffff8e;
+}
+
+/* .light-theme {
+  --background-color: #ffffff8e;
+  --text-color: #000000;
+  --icon-color: #000000;
+}
+
+.dark-theme {
+  --background-color: #121212;
+  --text-color: #ffffff;
+  --icon-color: #ffffff;
+} */
+
+.ant-switch.ant-switch-checked {
+  background-color: rgb(153, 145, 145) !important;
+}
+
+.ant-switch .ant-switch-handle::before {
+  background-color: white !important;
+  width: 25px;
+  height: 35px;
+  border-radius: 50%;
+  overflow-y: hidden;
+}
+
+.light-theme .ant-input {
+  color: white;
+}
+
+.dark-theme .ant-input {
+  color: #292727;
+}
+
+.ant-switch{
+  background-color: grey !important;
+}
+
+.light-theme:focus .ant-input-outlined:focus {
+  background-color: #292727;
+
+}
+
+.dark-theme:focus .ant-input-outlined:focus {
+  background-color: #292727;
+
+}
+
+.ant-card .ant-card-body {
+  padding: 2px;
+}
