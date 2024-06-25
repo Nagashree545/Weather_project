@@ -21,7 +21,7 @@ const Dashboard: React.FC<{}> = (() => {
     useEffect(() => {
         WeatherHandler("bangalore");
         ForecastHandler("bangalore")
-    }, []);
+    }, [WeatherHandler,ForecastHandler]);
     const handleSearch = (val: any) => {
         WeatherHandler(city);
         ForecastHandler(city)
@@ -38,7 +38,7 @@ const Dashboard: React.FC<{}> = (() => {
                                  ${isLightTheme ? styles["light-theme"] :
                                   styles["dark-theme"]}`}>
                                     <div>
-                                        <img src={logo} alt='image' 
+                                        <img src={logo} alt='logo' 
                                         className={styles["logo"]} />
                                         <h3>
                                             <HomeOutlined />

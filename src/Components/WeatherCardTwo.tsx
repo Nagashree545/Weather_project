@@ -1,4 +1,4 @@
-import { Carousel, Col, Row } from "antd";
+import { Col, Row } from "antd";
 import React from "react"
 import weather from "../UI/WeatherCard.module.css";
 import clouds from "../Assets/clouds.png";
@@ -40,8 +40,7 @@ const WeatherCardTwo: React.FC<{
                                                 singledata?.weather[0]?.main === "Drizzle" ? drizzle :
                                                     sunny} alt="sunny" />
                                 <p>{singledata?.main?.temp}°C</p>
-                                <p>{singledata?.
-                                    dt_txt}</p>
+                                <p>{singledata?.dt_txt}</p>
                             </>
 
                         </div>
