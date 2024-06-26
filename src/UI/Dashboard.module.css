@@ -135,7 +135,9 @@
 .light-theme .search--input::placeholder {
     color: black;
 }
-
+.loading--icon{
+place-content: center;
+}
 
 .location--btn {
     background-color: #65a15a;
